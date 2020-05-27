@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Evento {
 	String nomeEvento;
 	String nomeResponsavelEvento;
@@ -18,10 +17,10 @@ public class Evento {
 	
 	public void getListaComparativaPrecos() {
 		Evento.Palestra palestra =  Collections.max(lista, Comparator.comparing(s -> s.getCost()));
-        System.out.println("A palestra mais cara foi : " + palestra.palestraTitulo + " que custou R$ " + palestra.getCost());
+        System.out.println("A palestra mais cara foi: " + palestra.palestraTitulo + " que custou R$ " + palestra.getCost());
 
         palestra =  Collections.min(lista, Comparator.comparing(s -> s.getCost()));
-        System.out.println("A palestra mais barata foi : " + palestra.palestraTitulo + " que custou R$ " + palestra.getCost());
+        System.out.println("A palestra mais barata foi: " + palestra.palestraTitulo + " que custou R$ " + palestra.getCost());
 	}
 
 	public void getPalestrasDados() {
@@ -46,22 +45,22 @@ public class Evento {
 		System.out.print("Nome do evento: ");
 		nomeEvento = keyboard.nextLine();
 		
-		System.out.print("Nome do respons·vel pelo evento: ");
+		System.out.print("Nome do respons√°vel pelo evento: ");
 		nomeResponsavelEvento = keyboard.nextLine();
 		
-		System.out.print("Contato do respons·vel pelo evento: ");
+		System.out.print("Contato do respons√°vel pelo evento: ");
 		telResponsavelEvento = keyboard.nextLine();
 		
-		System.out.print("Data de inÌcio do evento: ");
+		System.out.print("Data de in√≠cio do evento: ");
 		dataInicioEvento = keyboard.nextLine();
 		
 		System.out.print("Data do final do evento: ");
 		dataFimEvento = keyboard.nextLine();
 		
-		System.out.print("Valor/Hora do respons·vel pelo evento: ");
+		System.out.print("Valor/Hora do respons√°vel pelo evento: ");
 		valorHoraResponsavel = keyboard.nextDouble();
 		
-		System.out.print("Carga hor·ria do evento: ");
+		System.out.print("Carga hor√°ria do evento: ");
 		cargaHorariaEvento = keyboard.nextDouble();
 		
         this.nomeEvento = nomeEvento;
@@ -72,7 +71,7 @@ public class Evento {
         this.valorHoraResponsavel = valorHoraResponsavel;
         this.cargaHorariaEvento = cargaHorariaEvento;
         
-        System.out.println(this.nomeResponsavelEvento + ", respons·vel pelo evento " + "\"" + this.nomeEvento +"\"" + ", custou R$ " + (this.cargaHorariaEvento * this.valorHoraResponsavel));
+        System.out.println(this.nomeResponsavelEvento + ", respons√°vel pelo evento " + "\"" + this.nomeEvento +"\"" + ", custou R$ " + (this.cargaHorariaEvento * this.valorHoraResponsavel));
     }
 	
 	public class Palestra {
@@ -93,10 +92,10 @@ public class Evento {
 		public void setDadosPalestra() {
 			Scanner keyboard = new Scanner(System.in);
 			
-			System.out.print("TÌtulo palestra: ");
+			System.out.print("T√≠tulo palestra: ");
 			palestraTitulo = keyboard.nextLine();
 			
-			System.out.print("Hor·rio de inÌco da palestra: ");
+			System.out.print("Hor√°rio de in√≠co da palestra: ");
 			palestraHorarioInicio = keyboard.nextLine();
 			
 			System.out.print("Nome do palestrante: ");
@@ -105,13 +104,13 @@ public class Evento {
 			System.out.print("Contato do palestrante: ");
 			palestranteContato = keyboard.nextLine();
 			
-			System.out.print("DescriÁ„o da palestra: ");
+			System.out.print("Descri√ß√£o da palestra: ");
 			palestraDescricao = keyboard.nextLine();
 			
 			System.out.print("Valor/hora do palestrante: ");
 			palestranteValorHora = keyboard.nextDouble();
 			
-			System.out.print("Carga hor·ria da palestra: ");
+			System.out.print("Carga hor√°ria da palestra: ");
 			palestraCargaHoraria = keyboard.nextDouble();
 			
 			this.palestraTitulo = palestraTitulo;
@@ -128,5 +127,26 @@ public class Evento {
 	        listaPalestras.add(this.palestraTitulo);
 	        lista.add(this);
 		}
+	}
+	public static void main(String[] args) {
+		// Cria√ß√£o de exemplo de evento
+		Evento evento = new Evento();
+
+		// Chamar m√©todo que define atributos do evento
+		evento.setDadosEventos();
+		
+		// Cria√ß√£o de exemplos de palestras
+		Evento.Palestra palestra = evento.new Palestra();
+		Evento.Palestra palestra1 = evento.new Palestra();
+		Evento.Palestra palestra2 = evento.new Palestra();
+		
+		// Chamar m√©todo que define atributos das palestras
+		palestra.setDadosPalestra();
+		palestra1.setDadosPalestra();
+		palestra2.setDadosPalestra();
+		
+		// Getters
+		evento.getPalestrasDados();
+		evento.getListaComparativaPrecos();
 	}
 }
